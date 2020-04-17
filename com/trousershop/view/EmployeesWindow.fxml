@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="747.0" maxWidth="1126.0" minHeight="747.0" minWidth="1126.0" prefHeight="747.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trousershop.controller.EmployeesWindowController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXTextField fx:id="txtSearch" focusColor="#00b0ff" labelFloat="true" layoutX="220.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="Type to search" unFocusColor="#00b0ff" />
+            <JFXComboBox fx:id="searchByCombo" focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="17.0" prefHeight="25.0" prefWidth="200.0" promptText="Search By" unFocusColor="#00b0ff" />
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="75.0" prefHeight="200.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <TableView fx:id="employeeTable" layoutX="1.0" prefHeight="200.0" prefWidth="1107.0">
+              <columns>
+                <TableColumn fx:id="id" text="ID" />
+                <TableColumn fx:id="name" prefWidth="150.0" text="Name" />
+                  <TableColumn fx:id="nicNo" prefWidth="100.0" text="NIC no" />
+                  <TableColumn fx:id="dob" prefWidth="100.0" text="DoB" />
+                  <TableColumn fx:id="address" prefWidth="150.0" text="Address" />
+                  <TableColumn fx:id="salary" prefWidth="100.0" text="Salary" />
+                  <TableColumn fx:id="mobile" prefWidth="100.0" text="Mobile" />
+                  <TableColumn fx:id="phone" prefWidth="100.0" text="Phone" />
+                  <TableColumn fx:id="joinedDate" prefWidth="100.0" text="Joined Date" />
+                  <TableColumn fx:id="notes" prefWidth="125.0" text="Notes" />
+              </columns>
+            </TableView>
+         </children></Pane>
+      <Pane fx:id="dataPane" disable="true" layoutX="10.0" layoutY="285.0" prefHeight="400.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXTextArea fx:id="txtNotes" focusColor="#00b0ff" labelFloat="true" layoutX="630.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="470.0" promptText=" Notes" style="-fx-border-color: #474747;" unFocusColor="#00b0ff" wrapText="true" />
+            <JFXTextField fx:id="txtName" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Name" unFocusColor="#00b0ff" />
+            <JFXTextField fx:id="txtNic" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="67.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="NIC No" unFocusColor="#00b0ff" />
+            <JFXTextField fx:id="txtAddress" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Address" unFocusColor="#00b0ff" />
+            <JFXTextField fx:id="txtPhone" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="292.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Phone" unFocusColor="#00b0ff" />
+            <JFXDatePicker fx:id="dateJoinedDate" defaultColor="#00b0ff" layoutX="16.0" layoutY="337.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Joined Date" />
+            <JFXTextField fx:id="txtMobile" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="247.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Mobile" unFocusColor="#00b0ff" />
+            <JFXButton fx:id="saveButton" buttonType="RAISED" layoutX="890.0" layoutY="362.0" onAction="#saveButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancelButton" buttonType="RAISED" layoutX="1000.0" layoutY="362.0" onAction="#cancelButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtEmpID" editable="false" focusColor="#00b0ff" labelFloat="true" layoutX="630.0" layoutY="22.0" prefHeight="25.0" promptText="Emp ID" unFocusColor="#00b0ff" />
+            <JFXDatePicker fx:id="dateDob" defaultColor="#00b0ff" layoutX="16.0" layoutY="112.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Date of Birth" />
+            <JFXTextField fx:id="txtSalary" focusColor="#00b0ff" labelFloat="true" layoutX="16.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Salary" unFocusColor="#00b0ff" />
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="694.0" prefHeight="47.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXButton fx:id="newButton" buttonType="RAISED" layoutX="780.0" layoutY="7.0" onAction="#newButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="New" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="editButton" buttonType="RAISED" layoutX="890.0" layoutY="7.0" onAction="#editButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="deleteButton" buttonType="RAISED" layoutX="1000.0" layoutY="7.0" onAction="#deleteButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

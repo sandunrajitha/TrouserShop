@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="orderWindow" maxHeight="747.0" maxWidth="1126.0" minHeight="747.0" minWidth="1126.0" prefHeight="747.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trousershop.controller.PurchOrderWindowController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXTextField fx:id="txtSearch" focusColor="#00b0ff" labelFloat="true" layoutX="220.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="Type to search" unFocusColor="#00b0ff" />
+            <JFXComboBox fx:id="searchByCombo" focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="17.0" prefHeight="25.0" prefWidth="200.0" promptText="Search By" unFocusColor="#00b0ff" />
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="676.0" style="-fx-border-color: #474747;">
+         <children>
+            <TableView fx:id="purchOrderTable" prefHeight="275.0" prefWidth="676.0">
+               <columns>
+                  <TableColumn fx:id="orderID" prefWidth="130.0" text="Order ID" />
+                  <TableColumn fx:id="supID" prefWidth="130.0" text="Supplier ID" />
+                  <TableColumn fx:id="addedDate" prefWidth="120.0" text="Added Date" />
+                  <TableColumn fx:id="dueDate" prefWidth="120.0" text="Due Date" />
+                  <TableColumn fx:id="amount" prefWidth="175.0" text="Amount" />
+               </columns>
+            </TableView>
+            <Pane layoutY="275.0" prefHeight="35.0" prefWidth="676.0">
+               <children>
+                  <JFXButton fx:id="payments" buttonType="RAISED" layoutX="10.0" layoutY="5.0" onAction="#payments" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Payments" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="addPurchOrder" buttonType="RAISED" layoutX="342.0" layoutY="5.0" onAction="#addPurchOrder" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="editPurchOrder" buttonType="RAISED" layoutX="455.0" layoutY="5.0" onAction="#editPurchOrder" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Edit" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="deletePurchOrder" buttonType="RAISED" layoutX="565.0" layoutY="5.0" onAction="#deletePurchOrder" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane fx:id="PurchOrderPane" disable="true" layoutX="700.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="420.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXTextField focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="15.0" prefHeight="25.0" prefWidth="400.0" promptText="Order ID" unFocusColor="#00b0ff" />
+            <JFXComboBox focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="400.0" promptText="Supplier" unFocusColor="#00b0ff" />
+            <JFXDatePicker defaultColor="#00b0ff" layoutX="10.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="400.0" promptText="Added Date" />
+            <JFXDatePicker defaultColor="#00b0ff" layoutX="10.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="400.0" promptText="Due Date" />
+            <JFXButton fx:id="savePurchOrder" buttonType="RAISED" layoutX="15.0" layoutY="268.0" onAction="#savePurchOrder" prefHeight="25.0" prefWidth="190.0" style="-fx-background-color: #00b0ff;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="215.0" layoutY="268.0" onAction="#cancel" prefHeight="25.0" prefWidth="190.0" style="-fx-background-color: #00b0ff;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="orderDetailPane" disable="true" layoutX="10.0" layoutY="393.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <Pane>
+               <children>
+                  <TableView prefHeight="300.0" prefWidth="1110.0">
+                     <columns>
+                        <TableColumn fx:id="code" prefWidth="150.0" text="Code" />
+                        <TableColumn fx:id="description" prefWidth="470.0" text="Description" />
+                        <TableColumn fx:id="qty" prefWidth="150.0" text="QTY" />
+                        <TableColumn fx:id="unitPrice" prefWidth="150.0" text="Unit Price" />
+                        <TableColumn fx:id="amount1" prefWidth="185.0" text="Amount" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <JFXButton fx:id="addDetail" buttonType="RAISED" layoutX="670.0" layoutY="310.0" onAction="#addDetail" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="editDetail" buttonType="RAISED" layoutX="780.0" layoutY="310.0" onAction="#editDetail" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="deleteDetail" buttonType="RAISED" layoutX="890.0" layoutY="310.0" onAction="#deleteDetail" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="saveOrder" buttonType="RAISED" layoutX="1000.0" layoutY="310.0" onAction="#saveOrder" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #00b0ff;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="310.0" prefHeight="25.0" prefWidth="150.0" promptText="Total" unFocusColor="#00b0ff" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

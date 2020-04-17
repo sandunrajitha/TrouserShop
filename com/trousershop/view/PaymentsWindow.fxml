@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="747.0" maxWidth="1126.0" minHeight="747.0" minWidth="1126.0" prefHeight="747.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trousershop.controller.PaymentsWindowController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+         <children>
+            <JFXButton fx:id="cusPayments" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#cusPaymentsClick" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: #00b0ff;" text="Customer Payments" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="supPayments" buttonType="RAISED" layoutX="380.0" layoutY="10.0" onAction="#supPaymentsClick" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: #00b0ff;" text="Supplier Paymnets" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="loadPanePayments" layoutX="10.0" layoutY="75.0">
+         <children>
+            <Pane fx:id="CusPaymentsPane" prefHeight="665.0" prefWidth="1110.0" style="-fx-border-color: #474747;">
+               <children>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1090.0" style="-fx-border-color: #474747;">
+                     <children>
+                        <JFXTextField fx:id="txtSearch" focusColor="#00b0ff" labelFloat="true" layoutX="220.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="Type to search" unFocusColor="#00b0ff" />
+                        <JFXComboBox fx:id="searchByCombo" focusColor="#00b0ff" labelFloat="true" layoutX="10.0" layoutY="17.0" prefHeight="25.0" prefWidth="200.0" promptText="Search By" unFocusColor="#00b0ff" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="75.0" prefHeight="55.0" prefWidth="1090.0" style="-fx-border-color: #474747;">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" text="Payment Method :" textFill="#00b0ff">
+                           <font>
+                              <Font name="Helvetica Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton layoutX="160.0" layoutY="12.0" prefHeight="30.0" prefWidth="50.0" text="Cheque" textFill="#00b0ff">
+                           <font>
+                              <Font name="Helvetica Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton layoutX="270.0" layoutY="12.0" prefHeight="30.0" prefWidth="50.0" text="Cash" textFill="#00b0ff">
+                           <font>
+                              <Font name="Helvetica Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton layoutX="365.0" layoutY="12.0" prefHeight="30.0" prefWidth="50.0" text="All" textFill="#00b0ff">
+                           <font>
+                              <Font name="Helvetica Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="140.0" prefHeight="515.0" prefWidth="1090.0">
+                     <children>
+                        <TableView fx:id="paymentsTable" prefHeight="515.0" prefWidth="1090.0">
+                          <columns>
+                            <TableColumn fx:id="paymentID" prefWidth="150.0" text="Payment ID" />
+                            <TableColumn fx:id="orderID" prefWidth="150.0" text="Order ID" />
+                              <TableColumn fx:id="date" prefWidth="180.0" text="Date" />
+                              <TableColumn fx:id="payment" prefWidth="150.0" text="Payment" />
+                              <TableColumn fx:id="paidAmount" prefWidth="150.0" text="Paid Amount" />
+                              <TableColumn fx:id="invoiceNo" prefWidth="150.0" text="Invoice No" />
+                              <TableColumn fx:id="method" prefWidth="160.0" text="Method" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
